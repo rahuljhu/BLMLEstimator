@@ -12,8 +12,8 @@ x=randn(1000,1);
 err(i,1)=sum((pdfK-pdftrue).^2)*dx;
 [pdf,fb]=estimateDensityCV(x,xgrid,'blmlq');
 err(i,2)=sum((pdf-pdftrue).^2)*dx;
-[pdf,fbH]=estimateDensityCV(x,xgrid,'hist');
-err(i,3)=sum((pdf-pdftrue).^2)*dx;
+[pdfH,fbH]=estimateDensityCV(x,xgrid,'hist');
+err(i,3)=sum((pdfH-pdftrue).^2)*dx;
 display(i);
 end
 mean(err)
